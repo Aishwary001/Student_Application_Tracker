@@ -246,8 +246,8 @@ app.delete("/delete-note/:jobId",authenticateToken, async (req, res) => {
         if(!job){
             return  res.status(404).json({error:true,message:"Job not found"});
         }
-
-        await Note.deleteOne({_id:jobId,userId:user._id});
+        
+        await Job.deleteOne({_id:jobId,userId:user._id});
 
         return res.json({
             error:false,

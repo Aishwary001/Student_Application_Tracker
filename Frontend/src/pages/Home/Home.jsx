@@ -74,9 +74,9 @@ function Home() {
   };
 
   const deleteNote = async (data) => {
-    const noteId = data._id;
+    const jobId = data._id;
     try {
-      const response = await axiosInstance.delete(`/delete-note/${noteId}`);
+      const response = await axiosInstance.delete(`/delete-note/${jobId}`);
 
       if (response.data && !response.data.error) {
         ShowToastMessage("Note Deleted Succesfully", "delete");
